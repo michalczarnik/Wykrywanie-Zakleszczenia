@@ -6,11 +6,12 @@ s = socket.socket()
 host = socket.gethostname()
 port = 9876
 
-# s.connect((host, port))
+need = array.array('i', [3,2,3,2,3])
+need2 = array.array('i', [4,5,6,5,6])
+sendArray = need+need2
+# print (str(need)+' + '+str(need2)+' = ' + str(sendArray))
 s.connect(('192.168.0.12',port))
-s.send('Siemka1'.encode())
-s.send('Siemka2'.encode())
+s.send(pickle.dumps(sendArray))
 a=pickle.loads(s.recv(1024))
 print (a)
-print(a.count(3))
 s.close
