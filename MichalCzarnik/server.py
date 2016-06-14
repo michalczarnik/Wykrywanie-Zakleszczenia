@@ -1,21 +1,26 @@
 import socket
-import _thread
 import time
 import threading
 import sys
+import array
+import pickle
 
-i=1
+
+
+number_of_connections = 0
 # Define a function for the thread
 def print_time( c, addr):
+    a=array.array('i', [1,2,3,4,3])
     print('Connected from ',addr)
-    global i
-    print(i)
-    i+=1
-    c.send('Thanks for connecting to server'.encode())
-    c.close()
-    time.sleep(5)
-    print(i)
+    global number_of_connections
+    number_of_connections+=1
+    print(c.recv(1024))
+    print(c.recv(1024))
+    while number_of_connections < 1:
+        time.sleep(0.1)
+    c.send(pickle.dumps(a))
     print('Connection Closed ',addr)
+    c.close()
 
 
 s=socket.socket()
@@ -30,7 +35,6 @@ while True:
         t=threading.Thread(target=print_time, args=(c, addr))
         t.daemon=True
         t.start()
-        # _thread.start_new_thread( print_time, (c, addr ) )
     except:
         print ("Error: "+str(sys.exc_info()))
 
