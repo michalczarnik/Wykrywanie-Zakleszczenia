@@ -14,8 +14,9 @@ required_number_of_connections = 0
 bankersFinished = False
 allocated = []
 max = []
-resources= [ 3,1, 1, 2 ]
-
+resources= [ 0,0,0,0 ]
+startTime = 0
+endTime = 0
 
 def start(argv):
     global required_number_of_connections
@@ -27,6 +28,11 @@ def start(argv):
     while i<int(required_number_of_connections):
         allocated.append([])
         max.append([])
+        i+=1
+    i=0
+    while i < 4:
+        res = input('Podaj '+str(i+1)+' element tabeli posiadanych zasobow (beda 4):')
+        resources[i] = int(res)
         i+=1
 
     s=socket.socket()
@@ -61,17 +67,27 @@ def threadFunction( c, addr):
     number_of_connections+=1
     while number_of_connections < int(required_number_of_connections):
         time.sleep(0.1)
+    if int(conn_nr) is 0:
+        global startTime
+        startTime=time.time()
     if int(conn_nr==0):
+        print(allocated)
+        print(max)
+        print(resources)
         allocationSuccessfull = bankers.allocate(allocated,max,resources)
         bankersFinished=True
     while not bankersFinished:
         time.sleep(0.1)
     if allocationSuccessfull is 1:
-        c.send('Nie wykryto zakleszczenia')
+        c.send('Nie wykryto zakleszczenia'.encode())
     else:
         c.send('Wykryto zakleszczenie'.encode())
     c.close()
     print('Zamknieto polaczenie nr ', conn_nr+1)
+    if int(conn_nr) is int(required_number_of_connections)-1:
+        global endTime
+        endTime = time.time()
+        print('Czas wykonania : ' + str(endTime-startTime))
 
 # Definicja funkcji dzilacej listy na pol
 def split_list(a_list):

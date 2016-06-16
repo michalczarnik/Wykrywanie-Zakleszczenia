@@ -20,12 +20,8 @@ def allocate(allocated, maxi, res):
             new_res = res[:]
             new_res=[res[i]+allocated[p][i] for i in range(len(res))]
             if allocate(new_allocated, new_maxi, new_res):
-                print ('maximum: \n%s'%('\n'.join([' '.join([str(item) for item in row]) for row in maxi])))
-                print ('allocated: \n%s'%('\n'.join([' '.join([str(item) for item in row]) for row in allocated])))
-                print ('resources in hand: %s'%(res))
-                print ('Allocated %s to %s'%([maxi[p][i]-allocated[p][i] for i in range(len(maxi[p]))], p))
-                print ('----------------------------------------------')
-                print ('----------------------------------------------')
+                print ('Posiadane zasoby: %s'%(res))
+                print ('----------\t-------------\t---------------')
                 return 1
             else:
                 return 0

@@ -9,8 +9,15 @@ def start(argv):
         hostname = argv
     s = socket.socket()
     port = 9876
-    allocated = array.array('i', [3,2,3,2])
-    max = array.array('i', [4,5,6,5])
+    allocated = [0,0,0,0]
+    max = [0,0,0,0]
+    i = 0
+    while i < 4:
+        m = input('Podaj '+str(i+1)+' element tabeli potrzebnych zasobow (beda 4):')
+        a = input('Podaj '+str(i+1)+' element tabeli posiadanych zasobow (beda 4):')
+        allocated[i] =int(a)
+        max[i] = int(m)
+        i+=1
     sendArray = allocated+max
     s.connect((hostname,port))
     s.send(pickle.dumps(sendArray))
