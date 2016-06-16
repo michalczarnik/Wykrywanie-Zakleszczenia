@@ -2,16 +2,18 @@ import socket
 import array
 import pickle
 
-s = socket.socket()
-host = socket.gethostname()
-port = 9876
-
-need = array.array('i', [3,2,3,2,3])
-need2 = array.array('i', [4,5,6,5,6])
-sendArray = need+need2
-# print (str(need)+' + '+str(need2)+' = ' + str(sendArray))
-s.connect(('192.168.0.12',port))
-s.send(pickle.dumps(sendArray))
-a=pickle.loads(s.recv(1024))
-print (a)
-s.close
+def start(argv):
+    if argv == '-1':
+        hostname = input('Podaj  adres ip:  ')
+    else:
+        hostname = argv
+    s = socket.socket()
+    port = 9876
+    allocated = array.array('i', [3,2,3,2])
+    max = array.array('i', [4,5,6,5])
+    sendArray = allocated+max
+    s.connect((hostname,port))
+    s.send(pickle.dumps(sendArray))
+    a=s.recv(1024)
+    print (a)
+    s.close
