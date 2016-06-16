@@ -6,11 +6,10 @@ import array
 import pickle
 import bankers
 
-#Inicjalizacja zmiennych
+#Inicjalizacja zmiennych globalnych
 number_of_connections = 0
 allocationSuccessfull = 0
 required_number_of_connections = 0
-
 bankersFinished = False
 allocated = []
 max = []
@@ -19,6 +18,11 @@ startTime = 0
 endTime = 0
 
 def start(argv):
+    """Funkcja uruchamiająca serwer, po wprowadzeniu ilosci polaczen dla ktorych bedzie wykonywany algorytm tworzy dla kazdego nadchodzacego polaczenia osobny watek.
+
+    Argumenty:
+    argv - Argument sprawdzajacy czy wybrana zostala ilosc polaczen.
+    """"
     global required_number_of_connections
     if argv is -1:
         required_number_of_connections = input('Podaj ilosc wymaganych polaczen: ')
@@ -50,8 +54,13 @@ def start(argv):
         except:
             print ("Error: "+str(sys.exc_info()))
 
-#Definicja funkcji wątku dla kazdego polaczenia
 def threadFunction( c, addr):
+    """Funkcja wykonywana przez kazde polaczenie przychodzace. Odpowiedzialna za odebranie danych przychodzacych od klienta, zapisanie ich do zmiennej globalnej, wykonaniu na niej algorytmu bankiera oraz odeslaniu informacji.
+
+    Argumenty:
+    c - Nowa inicjalizacja klasy Socket. Sluzy do wysylania i odbierania danych.
+    addr - Adres klienta ktory sie polaczyl do serwera.
+    """
     global number_of_connections
     conn_nr = number_of_connections
     recvArray = pickle.loads(c.recv(1024))
@@ -89,7 +98,14 @@ def threadFunction( c, addr):
         endTime = time.time()
         print('Czas wykonania : ' + str(endTime-startTime))
 
-# Definicja funkcji dzilacej listy na pol
 def split_list(a_list):
+    """Funkcja dzielaca liste na pol. Potrzebna w celu rozdzielenia listy przychodzacej od klienta
+
+    Argumenty:
+    a_list - Lista która ma być podzielona
+
+    Zmienne wyjsciowe:
+    Dwie połowiczne listy
+    """
     half = len(a_list)/2
     return a_list[:int(half)], a_list[int(half):]

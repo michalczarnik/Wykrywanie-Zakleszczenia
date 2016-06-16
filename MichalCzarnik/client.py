@@ -3,6 +3,11 @@ import array
 import pickle
 
 def start(argv):
+    """Funkcja uruchamiająca klienta wysyłającego tabele odnosnie jakie ma zasoby oraz jakich bedzie potrzebowal
+
+    Argumenty:
+    argv - Argument sprawdzajacy czy zostal podany adres ip serwera.
+    """
     if argv == '-1':
         hostname = input('Podaj  adres ip:  ')
     else:

@@ -2,6 +2,7 @@ import server
 import client
 import sys
 def helpMessage():
+    "Zdefiniowana funkcja majaca na celu w razie wprowadzenia nieprawidlowych danych wejsciowych wypisze dostepne opcje"
     print('USAGE')
     print('\tUsage: program -server|-client [-n number] [-i ip adress] ')
     print('')

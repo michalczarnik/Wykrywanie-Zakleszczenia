@@ -1,4 +1,15 @@
 def allocate(allocated, maxi, res):
+    """Funkcja odpowiedzialna za alokacje zasobow, dzialajaca zgodnie z algorytmem bankiera
+
+    Argumenty:
+    allocated - Macierz zasobow posiadanych przez wszystkie watki
+    maxi - Macierz zasobow jakie sa potrzebne wszystkim watkom
+    res - Wektor zasobow serwera
+
+    Zmienne wyjsciowe:
+    0 - Zwracane gdy nie udala sie alokacja srodko (wykryto zakleszczenie)
+    1- Zwracane gdy udala sie alokacja srodkow (nie ma zakleszczenia)
+    """
     if len(allocated)==1:
         safe=1
         for i in range(len(res)):
@@ -8,7 +19,6 @@ def allocate(allocated, maxi, res):
             return 1
         else:
             return 0
-    ###LENGTH is not 1. So you should try all permutations.
     for p in range(len(allocated)):
         safe = 1
         for i in range(len(allocated[p])):
