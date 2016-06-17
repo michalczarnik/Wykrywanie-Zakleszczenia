@@ -1,0 +1,38 @@
+﻿Build started 2016-06-17 09:54:06.
+     1>Project "c:\Users\Przemek\documents\visual studio 2012\Projects\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Pliki programów (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Bankiers_algorithm.cpp
+         Bankiers_algorithm.cpp
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(32): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\pliki programów (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(38): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\pliki programów (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(44): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\pliki programów (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(51): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\pliki programów (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(62): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\pliki programów (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(68): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\pliki programów (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(70): error C3861: 'isless': identifier not found
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(72): error C3861: 'isless': identifier not found
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(74): error C2440: '=' : cannot convert from 'void *' to 'int *'
+                 Conversion from 'void*' to pointer to non-'void' requires an explicit cast
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(75): error C2440: '=' : cannot convert from 'void *' to 'int *'
+                 Conversion from 'void*' to pointer to non-'void' requires an explicit cast
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(76): error C2440: '=' : cannot convert from 'void *' to 'int *'
+                 Conversion from 'void*' to pointer to non-'void' requires an explicit cast
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(80): error C3861: 'sub': identifier not found
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(81): error C3861: 'add': identifier not found
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(82): error C3861: 'sub': identifier not found
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(138): error C2440: '=' : cannot convert from 'void *' to 'int *'
+                 Conversion from 'void*' to pointer to non-'void' requires an explicit cast
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(139): error C2440: '=' : cannot convert from 'void *' to 'int *'
+                 Conversion from 'void*' to pointer to non-'void' requires an explicit cast
+     1>c:\users\przemek\documents\visual studio 2012\projects\consoleapplication1\consoleapplication1\bankiers_algorithm.cpp(147): error C3861: 'add': identifier not found
+     1>Done Building Project "c:\Users\Przemek\documents\visual studio 2012\Projects\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.47
